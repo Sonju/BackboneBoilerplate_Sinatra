@@ -1,0 +1,34 @@
+<h3>Excercise 4</h3>
+
+<h3>Hello, Backbone! Views, Views everywhere</h3>
+
+<h2>Unicorns Rock... if they only existed... I would be a Unicorn trainer!</h2>
+
+<section id="container">
+
+</section>
+
+<script type="text/javascript">
+
+  var app = app || {};
+  app.listItemView = Backbone.View.extend({
+    initialize: function() {
+      console.log('Backbone is wonderful!');
+      this.render();
+      console.log(this.$el);
+    },
+    render: function() {
+      console.log('My spirit animal is alive and well...');
+       $('body').append('<img src="http://www.geneticsandsociety.org/img/original/flying_unicorns.jpg">');
+    }
+  });
+
+  var listItem = new app.listItemView({
+    el: $('#container')
+  });
+
+  var listItemTwo = new app.listItemView({
+    el: $('.unicorn')
+  });
+
+</script>
