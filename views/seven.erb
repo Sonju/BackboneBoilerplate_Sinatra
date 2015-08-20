@@ -1,0 +1,27 @@
+<h3>Excercise 7</h3>
+
+<h3>Backbone Models (Second Movie)</h3>
+
+<script type="text/javascript">
+
+ var movieApp = movieApp || {};
+
+  movieApp.movieModel = Backbone.Model.extend({
+    url: "http://www.omdbapi.com/?t=nightmare+on+elm+street&y=&plot=short&r=json",
+    initialize: function() {
+      console.log("the model is ready!");
+      // when the model data changes... let's fire on event
+      this.on("change", function(event) {
+        // change event implements a design pattern
+        // called Object.observe()
+        console.log("the model... whoa...it changed!!");
+      });
+
+    }
+
+  });
+
+  var movie = new movieApp.movieModel();
+  movie.fetch();
+
+</script>
